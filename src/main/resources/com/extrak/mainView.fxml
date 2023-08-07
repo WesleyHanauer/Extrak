@@ -7,7 +7,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.extrak.mainController">
     <Pane prefHeight="553.0" prefWidth="600.0">
-      <ChoiceBox fx:id="selector" layoutX="22.0" layoutY="429.0" prefWidth="150.0" value="Income">
+      <ChoiceBox fx:id="selector" layoutX="22.0" layoutY="429.0" onAction="#changeTable" prefWidth="150.0" value="Income">
          <items>
             <FXCollections fx:factory="observableArrayList">
                <String fx:value="Income" />
@@ -15,7 +15,7 @@
             </FXCollections>
          </items>
       </ChoiceBox>
-      <TableView layoutX="22.0" layoutY="14.0" prefHeight="403.0" prefWidth="557.0">
+      <TableView fx:id="incomeTable" layoutX="22.0" layoutY="14.0" prefHeight="403.0" prefWidth="557.0">
         <columns>
           <TableColumn prefWidth="96.0" text="Date" />
           <TableColumn prefWidth="220.0" text="Description" />
@@ -24,5 +24,13 @@
         </columns>
       </TableView>
       <Button fx:id="buttonAddNew" layoutX="429.0" layoutY="429.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" />
+      <TableView fx:id="expensesTable" layoutX="22.0" layoutY="14.0" prefHeight="403.0" prefWidth="557.0" visible="false">
+         <columns>
+            <TableColumn prefWidth="96.0" text="Date" />
+            <TableColumn prefWidth="220.0" text="Description" />
+            <TableColumn prefWidth="114.0" text="Amount" />
+            <TableColumn prefWidth="126.0" text="Total" />
+         </columns>
+      </TableView>
    </Pane>
 </VBox>
