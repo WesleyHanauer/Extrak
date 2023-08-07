@@ -7,9 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -38,11 +35,13 @@ public class mainController {
     @FXML
     public void openAddMenu(){
         try {
+            //Not sure why but it works this way.
+            //TODO: Make this part better.
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addView.fxml"));
-            Parent root1 = (Parent) fxmlLoader.load();
+            Parent root1 = fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle("ABC");
+            stage.setTitle("Add menu");
             stage.setScene(new Scene(root1));
             stage.show();
         } catch (IOException e) {
