@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.collections.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.extrak.mainController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="469.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.extrak.mainController">
     <Pane prefHeight="553.0" prefWidth="600.0">
       <ChoiceBox fx:id="selector" layoutX="22.0" layoutY="429.0" onAction="#changeTable" prefWidth="150.0" value="Income">
          <items>
@@ -23,7 +27,7 @@
             <TableColumn prefWidth="126.0" text="Total" />
         </columns>
       </TableView>
-      <Button fx:id="buttonAddNew" layoutX="429.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#openAddMenu" prefHeight="26.0" prefWidth="150.0" />
+      <Button fx:id="buttonAddMenu" layoutX="429.0" layoutY="429.0" mnemonicParsing="false" onMouseClicked="#openAddMenu" prefHeight="26.0" prefWidth="150.0" />
       <TableView fx:id="expensesTable" layoutX="22.0" layoutY="14.0" prefHeight="403.0" prefWidth="557.0" visible="false">
          <columns>
             <TableColumn prefWidth="96.0" text="Date" />

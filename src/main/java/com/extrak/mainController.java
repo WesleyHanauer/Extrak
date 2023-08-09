@@ -10,10 +10,11 @@ import javafx.scene.control.TableView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.application.Platform;
 
 public class mainController {
     @FXML
-    private Button buttonAddNew;
+    private Button buttonAddMenu;
     @FXML
     private TableView<?> expensesTable;
     @FXML
@@ -25,30 +26,31 @@ public class mainController {
         if(selector.getValue().equals("Expenses")){
             expensesTable.setVisible(true);
             incomeTable.setVisible(false);
+            buttonAddMenu.setText("Add expense");
         }
         else{
             incomeTable.setVisible(true);
             expensesTable.setVisible(false);
+            buttonAddMenu.setText("Add income");
         }
     }
     @FXML
     public void openAddMenu(){
         try {
-            //Not sure why but it works this way.
-            //TODO: Make this part better.
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addView.fxml"));
-            Parent root1 = fxmlLoader.load();
+            Parent parent = fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Add menu");
-            stage.setScene(new Scene(root1));
+            stage.setScene(new Scene(parent));
             stage.show();
+            Platform.runLater(parent::requestFocus);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
     @FXML
     public void initialize(){
-        buttonAddNew.setText("Add income");
+        changeTable();
     }
 }
