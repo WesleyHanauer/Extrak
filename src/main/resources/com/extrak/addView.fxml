@@ -5,12 +5,10 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="156.0"
-      prefWidth="261.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="156.0" prefWidth="261.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.extrak.addController">
    <Pane prefHeight="285.0" prefWidth="82.0">
-      <TextField fx:id="amountField" layoutX="45.0" layoutY="66.0" promptText="Amount"/>
-      <Button fx:id="addNewButton" layoutX="90.0" layoutY="110.0" mnemonicParsing="false" prefHeight="24.0"
-              prefWidth="80.0" text="Add"/>
-      <TextField fx:id="descriptionField" layoutX="45.0" layoutY="24.0" promptText="Description"/>
+      <TextField fx:id="amountField" layoutX="56.0" layoutY="66.0" promptText="Amount" />
+      <TextField fx:id="descriptionField" layoutX="56.0" layoutY="24.0" promptText="Description" />
+      <Button fx:id="addNewButton" layoutX="90.0" layoutY="108.0" mnemonicParsing="false" onAction="#addNew" prefHeight="24.0" prefWidth="80.0" text="Add" />
    </Pane>
 </VBox>

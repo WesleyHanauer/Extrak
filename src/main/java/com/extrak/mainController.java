@@ -21,6 +21,9 @@ public class mainController {
     private TableView<?> incomeTable;
     @FXML
     public ChoiceBox<String> selector;
+    public String getSelectorValue(){
+        return selector.getValue();
+    }
     @FXML
     public void changeTable(){
         if(selector.getValue().equals("Expenses")){
