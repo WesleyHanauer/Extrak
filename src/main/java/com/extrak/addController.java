@@ -9,9 +9,12 @@ import java.io.Serializable;
 import java.util.HashMap;
 import static java.lang.Float.parseFloat;
 public class addController implements Serializable {
-    public void setMainController(mainController main) {
-        this.main = main;
+    mainController mainController;
+
+    public void setMainController(mainController mainController) {
+        this.mainController = mainController;
     }
+
     HashMap<Integer, Expense> expense = new HashMap<>();
     HashMap<Integer, Income> income = new HashMap<>();
 
@@ -24,17 +27,13 @@ public class addController implements Serializable {
     @FXML
     private TextField descriptionField;
 
-    mainController main;
-
     @FXML
-    void addNew(ActionEvent event) {
-        System.out.println(main.getSelectorValue());
-        //String description = descriptionField.getText();
-        //String amount = amountField.getText();
-        //Float convertedAmount = parseFloat(amount);
+    private void addNew(ActionEvent event){
+        String description = descriptionField.getText();
+        Float amount = parseFloat(amountField.getText());
     }
 
     @FXML
-    public void initialize(){
+    private void initialize(){
     }
 }

@@ -20,9 +20,15 @@ public class mainController {
     @FXML
     private TableView<?> incomeTable;
     @FXML
-    public ChoiceBox<String> selector;
+    private ChoiceBox<String> selector;
+
     @FXML
-    public void changeTable(){
+    public String getSelectorValue(){
+        return this.selector.getValue();
+    }
+
+    @FXML
+    private void changeTable(){
         if(selector.getValue().equals("Expenses")){
             expensesTable.setVisible(true);
             incomeTable.setVisible(false);
@@ -35,7 +41,7 @@ public class mainController {
         }
     }
     @FXML
-    public void openAddMenu() {
+    private void openAddMenu() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addView.fxml"));
             Parent parent = fxmlLoader.load();
@@ -53,11 +59,7 @@ public class mainController {
     }
 
     @FXML
-    public String getSelectorValue(){
-        return this.selector.getValue();
-    }
-    @FXML
-    public void initialize(){
+    private void initialize(){
         changeTable();
     }
 }
