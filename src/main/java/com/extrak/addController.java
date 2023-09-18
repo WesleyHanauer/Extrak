@@ -1,19 +1,19 @@
 package com.extrak;
 
+import com.extrak.objects.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import java.io.Serializable;
 import java.util.HashMap;
-
 import static java.lang.Float.parseFloat;
-
 public class addController implements Serializable {
-    mainController main;
-
-    HashMap<String, Float> expense = new HashMap<>();
-    HashMap<String, Float> income = new HashMap<>();
+    public void setMainController(mainController main) {
+        this.main = main;
+    }
+    HashMap<Integer, Expense> expense = new HashMap<>();
+    HashMap<Integer, Income> income = new HashMap<>();
 
     @FXML
     private Button addNewButton;
@@ -24,18 +24,14 @@ public class addController implements Serializable {
     @FXML
     private TextField descriptionField;
 
+    mainController main;
+
     @FXML
     void addNew(ActionEvent event) {
-        String description = descriptionField.getText();
-        String amount = amountField.getText();
-        Float convertedAmount = parseFloat(amount);
-        String selectorValue = main.getSelectorValue();
-
-        if(selectorValue.equals("Expenses")){
-            expense.put(description, convertedAmount);
-        }else{
-            income.put(description, convertedAmount);
-        }
+        System.out.println(main.getSelectorValue());
+        //String description = descriptionField.getText();
+        //String amount = amountField.getText();
+        //Float convertedAmount = parseFloat(amount);
     }
 
     @FXML

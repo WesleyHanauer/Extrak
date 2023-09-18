@@ -21,9 +21,6 @@ public class mainController {
     private TableView<?> incomeTable;
     @FXML
     public ChoiceBox<String> selector;
-    public String getSelectorValue(){
-        return selector.getValue();
-    }
     @FXML
     public void changeTable(){
         if(selector.getValue().equals("Expenses")){
@@ -38,10 +35,12 @@ public class mainController {
         }
     }
     @FXML
-    public void openAddMenu(){
+    public void openAddMenu() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addView.fxml"));
             Parent parent = fxmlLoader.load();
+            addController addControllerInstance = fxmlLoader.getController();
+            addControllerInstance.setMainController(this);
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Add menu");
@@ -51,6 +50,11 @@ public class mainController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @FXML
+    public String getSelectorValue(){
+        return this.selector.getValue();
     }
     @FXML
     public void initialize(){

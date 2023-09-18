@@ -8,15 +8,15 @@ public class Income {
     private Float amount;
     private Float total;
 
-    private Income(){}
+    public Income(){}
 
-    private Income(String description, Float amount, Float total){
+    public Income(String description, Float amount, Float total){
         this.description=description;
         this.amount=amount;
         this.total=total;
     }
 
-    private Income(Date date, String description, Float amount, Float total){
+    public Income(Date date, String description, Float amount, Float total){
         this.date=date;
         this.description=description;
         this.amount=amount;
