@@ -5,9 +5,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
 import java.io.Serializable;
 import java.util.HashMap;
+
 import static java.lang.Float.parseFloat;
+import static javafx.application.Platform.exit;
+
 public class addController implements Serializable {
     mainController mainController;
 
@@ -27,10 +32,24 @@ public class addController implements Serializable {
     @FXML
     private TextField descriptionField;
 
+    private void closeStage(){
+        Stage stage = (Stage) addNewButton.getScene().getWindow();
+        stage.close();
+    }
+
     @FXML
     private void addNew(ActionEvent event){
         String description = descriptionField.getText();
         Float amount = parseFloat(amountField.getText());
+        if(mainController.getSelectorValue().equals("Expenses")){
+
+        }
+        else if(mainController.getSelectorValue().equals("Income")){
+
+        }
+        else{
+            closeStage();
+        }
     }
 
     @FXML
