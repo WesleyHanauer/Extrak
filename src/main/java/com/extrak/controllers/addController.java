@@ -1,4 +1,4 @@
-package com.extrak;
+package com.extrak.controllers;
 
 import com.extrak.objects.*;
 import javafx.event.ActionEvent;
@@ -10,11 +10,8 @@ import javafx.stage.Stage;
 import java.io.Serializable;
 import java.util.HashMap;
 
-import static java.lang.Float.parseFloat;
-import static javafx.application.Platform.exit;
-
 public class addController implements Serializable {
-    mainController mainController;
+    com.extrak.controllers.mainController mainController;
 
     public void setMainController(mainController mainController) {
         this.mainController = mainController;
@@ -39,17 +36,18 @@ public class addController implements Serializable {
 
     @FXML
     private void addNew(ActionEvent event){
-        String description = descriptionField.getText();
+        /*String description = descriptionField.getText();
         Float amount = parseFloat(amountField.getText());
         if(mainController.getSelectorValue().equals("Expenses")){
 
         }
         else if(mainController.getSelectorValue().equals("Income")){
-
-        }
-        else{
             closeStage();
         }
+        else{
+
+        }
+        */
     }
 
     @FXML

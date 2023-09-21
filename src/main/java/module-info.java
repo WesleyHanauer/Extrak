@@ -7,4 +7,6 @@ module com.extrak {
 
     opens com.extrak to javafx.fxml;
     exports com.extrak;
+    exports com.extrak.controllers;
+    opens com.extrak.controllers to javafx.fxml;
 }

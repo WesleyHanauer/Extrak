@@ -1,5 +1,6 @@
-package com.extrak;
+package com.extrak.controllers;
 
+import com.extrak.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import java.io.IOException;
+
 import javafx.application.Platform;
 
 public class mainController {
@@ -43,7 +45,7 @@ public class mainController {
     @FXML
     private void openAddMenu() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addView.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("addView.fxml"));
             Parent parent = fxmlLoader.load();
             addController addControllerInstance = fxmlLoader.getController();
             addControllerInstance.setMainController(this);
