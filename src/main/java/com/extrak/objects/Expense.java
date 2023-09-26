@@ -1,9 +1,10 @@
 package com.extrak.objects;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
-public class Expense {
-    private Date date;
+public class Expense implements Serializable {
+    private LocalDateTime date;
     private String description;
     private Double amount;
     private Double total;
@@ -21,18 +22,18 @@ public class Expense {
         this.total=total;
     }
 
-    public Expense(Date date, String description, Double amount, Double total){
+    public Expense(LocalDateTime date, String description, Double amount, Double total){
         this.date=date;
         this.description=description;
         this.amount=amount;
         this.total=total;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
